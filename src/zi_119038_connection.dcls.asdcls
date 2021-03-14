@@ -1,0 +1,7 @@
+@EndUserText.label: 'Connection'
+@MappingRole: true
+define role ZI_119038_CONNECTION {
+    grant select on ZI_119038_CONNECTION
+     where CarrierId > 'MM';
+                        
+}

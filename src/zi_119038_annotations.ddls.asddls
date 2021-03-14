@@ -12,6 +12,7 @@
     typeNamePlural: 'Flights'
 }
 @Search.searchable: true
+@Metadata.allowExtensions: true
 define view entity ZI_119038_Annotations
   as select from /dmo/flight
 {
