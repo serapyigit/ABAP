@@ -11,12 +11,12 @@
 define view entity ZI_119038_Travel_By_Customer
   as select from ZI_119038_Travel_Xt
 {
-  key concat_with_space(TravelId,Description,1)          as Travel,
+  key concat_with_space(TravelId,Description,1)          as Travel, 
       AgencyId,
       CustomerId,
       BeginDate,
       EndDate,
-      dats_days_between(BeginDate,EndDate)               as Duration,
+      dats_days_between(BeginDate,EndDate)               as Duration, 
       @Semantics.amount.currencyCode: 'CurrencyCode'
       currency_conversion(amount => Price,
                           source_currency => CurrencyCode,

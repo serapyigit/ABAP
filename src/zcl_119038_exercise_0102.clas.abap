@@ -16,26 +16,27 @@ CLASS ZCL_119038_EXERCISE_0102 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.
-    data operand1 type p length 16 decimals 2 value '3.14'.
-    data operator type c length 1 value '/'.
-    data operand2 type p length 16 decimals 2 value '5.6'.
+    DATA operand1 TYPE p LENGTH 16 DECIMALS 2 VALUE '3.14'.
+    DATA operator TYPE c LENGTH 1 VALUE 'm'.
+    DATA operand2 TYPE p LENGTH 16 DECIMALS 2 VALUE '5.6'.
 
-    data result type p LENGTH 16 decimals 2.
+    DATA result TYPE p LENGTH 16 DECIMALS 2.
 
-    case operator.
-        when '+'.
+    CASE operator.
+      WHEN '+'.
         result = operand1 + operand2.
-        when '-'.
+      WHEN '-'.
         result = operand1 - operand2.
-        when '*'.
+      WHEN '*'.
         result = operand1 * operand2.
-        when '/'.
+      WHEN '/'.
         result = operand1 / operand2.
-        when 'm' OR 'M'.
-        result = nmin(  val1 = operand1 val2 = operand2 ).
-        when Others.
+      WHEN 'm' OR 'M'.
+        result = nmin( val1 = operand1 val2 = operand2 ).
+      WHEN OTHERS.
         out->write( |Fehler: ungültiger Operator| ).
-    endcase.
+    ENDCASE.
+
     out->write( |Ergebnis: | && result ).
   ENDMETHOD.
 ENDCLASS.
